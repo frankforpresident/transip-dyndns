@@ -8,6 +8,13 @@
 This repo is a fork from [transip-dyndns](https://github.com/RolfKoenders/transip-dyndns) but actually a complete refactor (including new config structure).
 Keeps dns entries on [transip](http://www.transip.nl) for one or multiple domains up to date with the current WAN IP (or custom content). 
 
+## Roadmap :new:
+- [ ] Implement proper dependency injection
+- [ ] Rework Logger
+- [ ] Add YAML config support
+- [ ] Validate ARM docker image support
+- [ ] Create hassio-addon
+
 ## Features :mega:
 - Update multiple domains and  and their entries
 - Interval (by default every 30m)
