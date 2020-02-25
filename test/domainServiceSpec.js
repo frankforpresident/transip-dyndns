@@ -7,9 +7,9 @@ const testConfig = {
     wanCheckURL: 'http://icanhazip.com'
 };
 
-const checkDomain = proxyquire
+const domainService = proxyquire
     .noCallThru()
-    .load('../checkDomain.js', {
+    .load('../services/domainService.js', {
         './config.js': {
             get: (key) => {
                 return testConfig[key];
@@ -134,12 +134,8 @@ describe('When we have a domain check function', function() {
     testSet.forEach(function(test) {
         describe(test.name, function() {
 
-            function updateDnsEntries(name, dnsEntries) {
-                return { name, dnsEntries };
-            }
-
             beforeEach(function() {
-                this.result = checkDomain(test.configDomain, test.transIpDomain, updateDnsEntries);
+                this.result = domainService(test.configDomain, test.transIpDomain);
             });
 
             it('Should pass', function() {

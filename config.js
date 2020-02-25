@@ -1,4 +1,14 @@
 const convict = require('convict');
+const yaml = require('js-yaml');
+const toml = require('toml');
+const json5 = require('json5');
+
+convict.addParser([
+    { extension: 'json', parse: JSON.parse },
+    { extension: 'json5', parse: json5.parse },
+    { extension: [ 'yml', 'yaml' ], parse: yaml.safeLoad },
+    { extension: 'toml', parse: toml.parse }
+]);
 
 const config = convict({
     transip: {

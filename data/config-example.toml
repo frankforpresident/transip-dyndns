@@ -1,0 +1,20 @@
+logLevel = "info"
+dnsCheckInterval = "30m"
+
+[transip]
+login = "User"
+privateKeyPath = "/secrets/private.key"
+
+[domainsToCheck]
+
+  [[domainsToCheck.domains]]
+  domain = "example.net"
+
+    [[domainsToCheck.domains.dnsEntries]]
+    name = "@"
+    type = "A"
+
+    [[domainsToCheck.domains.dnsEntries]]
+    name = "prefix"
+    type = "CNAME"
+    content = "@"

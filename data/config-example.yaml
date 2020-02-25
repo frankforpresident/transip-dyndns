@@ -1,0 +1,14 @@
+transip:
+  login: User
+  privateKeyPath: "/secrets/private.key"
+domainsToCheck:
+  domains:
+    - domain: example.net
+      dnsEntries:
+        - name: "@"
+          type: A
+        - name: prefix
+          type: CNAME
+          content: "@"
+logLevel: info
+dnsCheckInterval: 30m

@@ -9,22 +9,26 @@ This repo is a fork from [transip-dyndns](https://github.com/RolfKoenders/transi
 Keeps dns entries on [transip](http://www.transip.nl) for one or multiple domains up to date with the current WAN IP (or custom content). 
 
 ## Roadmap :new:
-- [ ] Implement proper dependency injection
-- [ ] Rework Logger
-- [ ] Add YAML config support
+- [X] Implement proper dependency injection
+- [X] Add YAML config support
+- [X] Add TOML config support
+- [X] Add JSON5 config support
 - [ ] Validate ARM docker image support
 - [ ] Create hassio-addon
 
 ## Features :mega:
-- Update multiple domains and  and their entries
+- Update multiple domains and and their entries
 - Interval (by default every 30m)
 - Improved logging
-- Docker support
+- Docker
+- YAML, TOML, JSON5 and JSON config support
+- Unit tests
 
 ## Configure :heavy_exclamation_mark:
-In the data folder there is an example file call `config-example.json`. rename that file as `config.json` and configure it as below demonstrated. 
+In the data folder there are config examples for YAML, JSON5, TOML and JSON called `config-example.EXTENSION`. rename that file as config like `config.json` and configure it as below demonstrated. 
 
 #### Example
+##### JSON
 ```json
 {
   "transip": {
@@ -52,7 +56,6 @@ In the data folder there is an example file call `config-example.json`. rename t
   "logLevel": "info",
   "dnsCheckInterval": "30m"
 }
-
 ```
 Note: every dnsEntry needs to **contain** at least a **name and type**.
 
