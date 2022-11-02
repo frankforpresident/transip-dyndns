@@ -8,6 +8,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 WORKDIR /transip-ddns
 
-ADD . /transip-ddns
+ADD . .
 
-CMD [ "python", "transip-ddns.py" ]
+CMD [ "python", "-u" "transip-ddns.py" ]
