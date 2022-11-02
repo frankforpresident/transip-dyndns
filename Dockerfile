@@ -10,4 +10,4 @@ WORKDIR /transip-ddns
 
 ADD . .
 
-CMD [ "python", "-u" "transip-ddns.py" ]
+CMD [ "python", "-u", "transip-ddns.py" ]
