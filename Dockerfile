@@ -6,8 +6,6 @@ RUN apk add -U --no-cache gcc build-base linux-headers ca-certificates python3-d
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir python-transip schedule
 
-WORKDIR /transip-ddns
-
 ADD . .
 
 CMD [ "python", "-u", "transip-ddns.py" ]
